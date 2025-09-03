@@ -1,3 +1,11 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="InconsistentArrays">
     <string name="app_name">Numeros da Sorte</string>
+    <string name="first_fragment_label">Primeira Tela</string>
+    <string name="second_fragment_label">Segunda Tela</string>
+    <string-array name="jogos">
+        <item>Mega-Sena</item>
+        <item>Lotofácil</item>
+        <item>Quina</item>
+        <item>Lotomania</item>
+    </string-array>
 </resources>
