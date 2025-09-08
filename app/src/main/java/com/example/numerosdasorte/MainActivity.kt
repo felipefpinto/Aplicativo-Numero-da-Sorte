@@ -1,8 +1,10 @@
 package com.example.numerosdasorte
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -20,6 +22,13 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        val btnhome = findViewById<ImageButton>(R.id.btnhome)
+        btnhome.setOnClickListener {
+            val trocarpagina = Intent(this, Home::class.java)
+            startActivity(trocarpagina)
+        }
+
+
     }
     fun sortear(view: View){
         val textResultado = findViewById< TextView>(R.id.text_resultado)
@@ -29,4 +38,5 @@ class MainActivity : AppCompatActivity() {
 
         textResultado.setText("Numero Sorteado: $numero")
     }
+
 }
