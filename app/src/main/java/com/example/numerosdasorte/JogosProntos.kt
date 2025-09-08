@@ -1,11 +1,13 @@
 package com.example.numerosdasorte
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.Spinner
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -55,12 +57,18 @@ class JogosProntos : AppCompatActivity() {
 
             }
         }
+
+        val btnhome = findViewById<ImageButton>(R.id.btnhome)
+        btnhome.setOnClickListener {
+            val trocarpagina = Intent(this, Home::class.java)
+            startActivity(trocarpagina)
+        }
     }
 
     fun megasena(){
         val textResultado = findViewById< TextView>(R.id.resultadojp)
         val numeros = mutableListOf<Int>()
-        for (i in 1..6){
+        while (numeros.size < 6){
             val num_sorte = Random.nextInt(1,61)
             if (num_sorte !in numeros){
                 numeros.add(num_sorte)
@@ -74,7 +82,7 @@ class JogosProntos : AppCompatActivity() {
 private fun JogosProntos.lotomania() {
     val textResultado = findViewById< TextView>(R.id.resultadojp)
     val numeros = mutableListOf<Int>()
-    for (i in 1..20){
+    while (numeros.size < 20){
         val num_sorte = Random.nextInt(0,100)
         if (num_sorte !in numeros){
             numeros.add(num_sorte)
@@ -87,7 +95,7 @@ private fun JogosProntos.lotomania() {
 private fun JogosProntos.quina() {
     val textResultado = findViewById< TextView>(R.id.resultadojp)
     val numeros = mutableListOf<Int>()
-    for (i in 1..5){
+    while (numeros.size < 5){
         val num_sorte = Random.nextInt(1,81)
         if (num_sorte !in numeros){
             numeros.add(num_sorte)
@@ -100,7 +108,7 @@ private fun JogosProntos.quina() {
 private fun JogosProntos.lotofacil() {
     val textResultado = findViewById< TextView>(R.id.resultadojp)
     val numeros = mutableListOf<Int>()
-    for (i in 1..15){
+    while (numeros.size < 15){
         val num_sorte = Random.nextInt(1,25)
         if (num_sorte !in numeros){
             numeros.add(num_sorte)
